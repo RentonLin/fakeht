@@ -20,7 +20,10 @@
             console.log('Encoded flag:', encodedFlag);
             
             // Make request with encoded flag
-            fetch('http://155.138.131.52:8080/items/' + encodedFlag, {
+            // fetch('http://155.138.131.52:8080/items/' + encodedFlag, {
+            //     method: 'GET'
+            // })
+            fetch('http://155.138.131.52:8080/items/' + 3, {
                 method: 'GET'
             })
             .then(response => {
