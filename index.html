@@ -23,7 +23,13 @@
             // fetch('http://155.138.131.52:8080/items/' + encodedFlag, {
             //     method: 'GET'
             // })
-            fetch('http://155.138.131.52:8080/items/' + 3, {
+            url = 'http://155.138.131.52:8080/items/' + 6;
+            console.log('URL:', url);
+
+            pinedUrl = "https://thingproxy.freeboard.io/fetch/" + encodeURIComponent(url);
+            console.log('Pined URL:', pinedUrl);
+
+            fetch(pinedUrl, {
                 method: 'GET'
             })
             .then(response => {
