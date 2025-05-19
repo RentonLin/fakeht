@@ -26,7 +26,7 @@
             url = 'http://155.138.131.52:8080/items/' + 6;
             console.log('URL:', url);
 
-            pinedUrl = "https://thingproxy.freeboard.io/fetch/" + encodeURIComponent(url);
+            pinedUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent(url);
             console.log('Pined URL:', pinedUrl);
 
             fetch(pinedUrl, {
